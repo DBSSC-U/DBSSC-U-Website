@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            html, body {margin: 0; height: 100%; width: 100%; overflow: hidden}
+        </style>
+    </head>
+    <body onLoad="redirect()" style="background-color: black">
+
+    <video id="animation" autoplay muted>
+      <source src="U intro logo.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function redirect(){
+            console.log((-window.innerWidth/2).toString());
+            var len = Math.min(window.innerWidth, window.innerHeight);
+            var wlen = len * 4;
+            var hlen = len * 2;
+            document.getElementById("animation").style.width = (wlen).toString() + "px";
+            document.getElementById("animation").style.height = (hlen).toString() + "px";
+            document.getElementById("animation").style.marginLeft = ((window.innerWidth)/2-wlen/2).toString() + "px";
+            document.getElementById("animation").style.marginRight = (-((window.innerWidth)/2-wlen/2)).toString() + "px";
+            document.getElementById("animation").style.marginTop = (Math.min(window.innerHeight/2-hlen/2,0)).toString() + "px";
+            document.getElementById("animation").style.marginBottom = (-(window.innerHeight/2-hlen/2)).toString() + "px";
+            setTimeout(() => { location.replace("https://www.instagram.com/u.dbs.2122/"); }, 2400);
+        }
+    </script>
+    </body>
+</html>
