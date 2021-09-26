@@ -8,11 +8,12 @@
     </head>
     <body onLoad="redirect()" style="background-color: black">
 
-    <video id="animation" autoplay muted>
+    <video id="animation" autoplay muted onclick="easteregg()">
       <source src="U intro logo.mp4" type="video/mp4">
     </video>
 
     <script>
+        var clicks = 0;
         function redirect(){
             console.log((-window.innerWidth/2).toString());
             var len = Math.min(window.innerWidth, window.innerHeight);
@@ -25,6 +26,13 @@
             document.getElementById("animation").style.marginTop = (Math.min(window.innerHeight/2-hlen/2,0)).toString() + "px";
             document.getElementById("animation").style.marginBottom = (-(window.innerHeight/2-hlen/2)).toString() + "px";
             setTimeout(() => { location.replace("https://www.instagram.com/u.dbs.2122/"); }, 2400);
+        }
+        function easteregg(){
+            console.log(clicks);
+            clicks++;
+            if(clicks==8){
+                location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            }
         }
     </script>
     </body>
